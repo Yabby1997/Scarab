@@ -31,7 +31,22 @@ let targets: [Target] = [
             configurations: [],
             defaultSettings: .recommended
         )
-    )
+    ),
+    Target(
+        name: "ScarabTests",
+        platform: .iOS,
+        product: .unitTests,
+        bundleId: "com.seunghun.scarab.tests",
+        sources: ["ScarabTests/Sources/**"],
+        dependencies: [
+            .target(name: "Scarab")
+        ],
+        settings: .settings(
+            base: ["DEVELOPMENT_TEAM": "5HZQ3M82FA"],
+            configurations: [],
+            defaultSettings: .recommended
+        )
+    ),
 ]
 
 let project = Project(
